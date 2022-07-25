@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"Tests\\Units\\ApplicationTest::testItCanGetinstanceOfApplication":0.006}}
+{"version":1,"defects":{"Tests\\Units\\ApplicationTest::testItCanGetGBasicApplicationDatasetFromAppClass":3},"times":{"Tests\\Units\\ApplicationTest::testItCanGetinstanceOfApplication":0.005,"Tests\\Units\\ApplicationTest::testItCanGetGBasicApplicationDatasetFromAppClass":0.001,"Tests\\Units\\ApplicationTest::testItCanGetBasicApplicationDatasetFromAppClass":0.001}}
