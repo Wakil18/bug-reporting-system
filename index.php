@@ -3,11 +3,12 @@ declare(strict_types = 1);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$app = new \App\Helpers\App();
-echo $app->getServerTime()->format('y-m-d H:i:s') .PHP_EOL;
-echo $app->getLogPath() .PHP_EOL;
-echo $app->getEnvironment() .PHP_EOL;
-echo $app->isDebugMode() .PHP_EOL;
-echo $app->isRunningFromConsole() .PHP_EOL;
+require_once __DIR__ . '/Src/Exception/exception.php';
+
+$logger = new \App\Logger\Logger();
+$logger->log(
+    \App\Logger\LogLevel::EMERGENCY, 'This is an emergency', ['exception' => 'exception occurred']
+);
+$logger->info('User account created successfully', ['id' => 5]);
 
 

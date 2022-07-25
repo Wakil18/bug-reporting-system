@@ -3,7 +3,8 @@ declare(strict_types = 1);
 
 namespace App\Helpers;
 
-use PHPUnit\Exception;
+use App\Exception\NotFoundException;
+//use PHPUnit\Exception;
 
 class Config
 {
@@ -25,8 +26,10 @@ class Config
             if (file_exists($path)){
                 $fileContent = require $path;
             }
-        }catch (Exception $exception){
-            die($exception->getMessage());
+        }catch (\Throwable $exception){
+            throw new NotFoundException(
+                sprintf('The specified file: %s was not found', $filename), ['not found file', 'data is passed']
+            );
         }
 
         return $fileContent;
